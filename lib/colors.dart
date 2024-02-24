@@ -13,3 +13,6 @@ const kShrineSurfaceWhite = Color(0xFFFFFBFA);
 const kShrineBackgroundWhite = Colors.white;
 
 const kShrinePurple = Color(0xFF5D1049);
+const kShrineBlue = Color.fromARGB(255, 30, 50, 83);
+const kShrineLightBlue = Color.fromARGB(255, 68, 169, 189);
+const kShrineSoLightBlue = Color.fromARGB(255, 140, 236, 255);

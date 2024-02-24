@@ -20,6 +20,7 @@ import 'login.dart';
 import 'supplemental/cut_corners_border.dart';
 import 'backdrop.dart'; // New code
 import 'model/product.dart'; // New code
+import 'material_theme.dart';
 
 // TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatefulWidget {
@@ -41,7 +42,7 @@ class _ShrineAppState extends State<ShrineApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Shrine',
+      title: 'Shrine (Xav)',
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
@@ -56,7 +57,7 @@ class _ShrineAppState extends State<ShrineApp> {
                 currentCategory: _currentCategory,
                 onCategoryTap: _onCategoryTap,
               ),
-              frontTitle: Text('SHRINE'),
+              frontTitle: Text('SHRINE (Xav)'),
               backTitle: Text('MENU'),
             ),
         // TODO: Make currentCategory field take _currentCategory (104)
@@ -64,7 +65,7 @@ class _ShrineAppState extends State<ShrineApp> {
         // TODO: Change backLayer field value to CategoryMenuPage (104)
       },
       // TODO: Customize the theme (103)
-      theme: _kShrineTheme, // New code
+      theme: _buildShrineTheme(), // New code
     );
   }
 }
@@ -73,33 +74,35 @@ final ThemeData _kShrineTheme = _buildShrineTheme();
 
 ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light(useMaterial3: true);
+  final MaterialTheme materialTheme = MaterialTheme(const TextTheme());
+
+  // Ambil skema warna dari MaterialTheme
+  final ColorScheme colorScheme = materialTheme.light().colorScheme;
+
   return base.copyWith(
-    colorScheme: base.colorScheme.copyWith(
-      primary: kShrinePink100,
-      onPrimary: kShrineBrown900,
-      secondary: kShrineBrown900,
-      error: kShrineErrorRed,
-    ),
+    colorScheme: colorScheme,
     textTheme: _buildShrineTextTheme(base.textTheme),
     textSelectionTheme: const TextSelectionThemeData(
-      selectionColor: kShrinePink100,
+      selectionColor: kShrineLightBlue,
     ),
     appBarTheme: const AppBarTheme(
-      foregroundColor: kShrineBrown900,
-      backgroundColor: kShrinePink100,
+      foregroundColor: kShrineBlue,
+      backgroundColor: kShrineLightBlue,
     ),
     inputDecorationTheme: const InputDecorationTheme(
       border: CutCornersBorder(),
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-          color: kShrineBrown900,
+          color: kShrineBlue,
         ),
       ),
       floatingLabelStyle: TextStyle(
-        color: kShrineBrown900,
+        color: kShrineBlue,
       ),
     ),
+    // Ubah warna latar belakang di sini
+    scaffoldBackgroundColor: Color.fromARGB(255, 239, 242, 252),
   );
 }
 
@@ -123,10 +126,19 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
       )
       .apply(
         fontFamily: 'Rubik',
-        displayColor: kShrineBrown900,
-        bodyColor: kShrineBrown900,
+        displayColor: kShrineBlue,
+        bodyColor: kShrineBlue,
       );
 }
 
-// TODO: Build a Shrine Theme (103)
-// TODO: Build a Shrine Text Theme (103)
+// Teks tambahan di bawah ini
+final Widget shrineByXaviera = Container(
+  alignment: Alignment.center,
+  child: Text(
+    'by: xaviera',
+    style: TextStyle(
+      color: const Color.fromARGB(255, 16, 15, 15),
+      fontSize: 12,
+    ),
+  ),
+);

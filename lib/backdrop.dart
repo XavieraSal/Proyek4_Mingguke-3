@@ -160,7 +160,7 @@ class _BackdropState extends State<Backdrop>
       ),
       // TODO: Remove leading property (104)
       // TODO: Create title with _BackdropTitle parameter (104)
-      title: Text('SHRINE'),
+      title: Text('SHRINE (Xav)'),
       actions: <Widget>[
         // TODO: Add shortcut to login screen from trailing icons (104)
         IconButton(
@@ -176,6 +176,16 @@ class _BackdropState extends State<Backdrop>
           icon: Icon(
             Icons.tune,
             semanticLabel: 'filter',
+          ),
+          onPressed: () {
+            // TODO: Add open login (104)
+          },
+        ),
+
+            IconButton(
+          icon: Icon(
+            Icons.star,
+            semanticLabel: 'rate',
           ),
           onPressed: () {
             // TODO: Add open login (104)
