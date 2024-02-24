@@ -18,4 +18,4 @@ D3-2A
 ![image](https://github.com/XavieraSal/Proyek4_Mingguke-3/assets/123913465/e46d28e8-51e5-4f76-9d81-bf9aed890262)
 
 notes:
-beberapa kali tidak jadi update fitur karena bermasalah dengan versi environment flutter-nya, sudah diganti dan ada error bagaian yang lain mengenai versinya. jadi tidak bisa menambahkan dependency dengan versi terbaru. setelah dilihat ternyata base project-nya memang dari tahun 2018. 
+beberapa kali tidak jadi update fitur karena bermasalah dengan versi environment flutter-nya, sudah diganti dan ada error bagaian yang lain mengenai versinya dengan keterangannya "Your project requires a newer version of the Kotlin Gradle ...flutter err : ext.kotlin_version = '<latest-version>'. sudah diganti tapi tetap eror, jadi tidak bisa menambahkan dependency karena tidak compatible dengan versi flutter-nya. setelah dilihat ternyata base project-nya memang dari tahun 2018. 
